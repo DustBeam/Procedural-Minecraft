@@ -1,8 +1,11 @@
-﻿NumpadAdd::
+^m::
 {
 	Send 't'
 	Sleep 100
-    SendText '//replace ##leaves,##logs,##flowers,tall_grass,short_grass,pumpkin,fern,vine,obsidian,netherrack,cactus,dead_bush,bee_nest air'
+    SendText '/gamerule randomTickSpeed 0'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace ##leaves,##logs,##flowers,tall_grass,short_grass,pumpkin,fern,vine,obsidian,netherrack,cactus,dead_bush,bee_nest air'
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace grass_block,[sand&[<air]],[dirt&[<air]] lime'
@@ -50,7 +53,7 @@
 	SendText '//fall'
 	Send '{Enter}t'
 	Sleep 20000
-	SendText '//replace "yellow |air" air'
+	SendText '//replace "yellow |air,[!>white]" air'
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace yellow 99.5%yellow,0.5%blue'
@@ -69,36 +72,6 @@
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace yellow air'
-	Send '{Enter}t'
-	Sleep 1500
-	SendText '//replace "air |[blue][2][4]" blue'
-	Send '{Enter}t'
-	Sleep 1500
-	SendText '//replace "air |[blue][2][4]" blue'
-	Send '{Enter}t'
-	Sleep 1500
-	SendText '//replace "air |[blue][2][4]" blue'
-	Send '{Enter}t'
-	Sleep 1500
-	SendText '//replace "air |[blue][2][4]" blue'
-	Send '{Enter}t'
-	Sleep 1500
-	SendText '//replace "air |[blue][2][4]" blue'
-	Send '{Enter}t'
-	Sleep 1500
-	SendText '//replace "air |[blue][2][4]" blue'
-	Send '{Enter}t'
-	Sleep 1500
-	SendText '//replace "air |[blue][2][4]" blue'
-	Send '{Enter}t'
-	Sleep 1500
-	SendText '//replace "air |[blue][2][4]" blue'
-	Send '{Enter}t'
-	Sleep 1500
-	SendText '//replace "air |[blue][2][4]" blue'
-	Send '{Enter}t'
-	Sleep 1500
-	SendText '//replace "air |[blue][2][4]" blue'
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace "air |[blue][2][4]" blue'
@@ -614,7 +587,7 @@
 	SendText '//replace "air >black" black'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace "air >black" black'
+	SendText '//replace "air >black" cyan'
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace "air >white" white'
@@ -635,7 +608,7 @@
 	SendText '//replace >light_gray,orange calcite'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace "calcite >|black" brown'
+	SendText '//replace "calcite >>|black" brown'
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace >green oak_wood'
@@ -923,6 +896,9 @@
 	SendText '//stack 1 down -m sponge -s'
 	Send '{Enter}t'
 	Sleep 1500
+	SendText '//expand 50 up'
+	Send '{Enter}t'
+	Sleep 1500
 	SendText '//replace barrier air'
 	Send '{Enter}t'
 	Sleep 1500
@@ -965,7 +941,55 @@
 	SendText '//replace light air'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace "air >stone_bricks |black" moss_block'
+	SendText '//replace "black [<white],[>stone_bricks]" cyan'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "black [>>||grass_block],[>>>||grass_block],[>>>>||grass_block]" black,blue,blue,blue'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "blue <cyan" black'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "blue |blue" black'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "blue |black" black'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//re blue #offset[#mask[#offset[0][0][-4][blue]][black][#~[sponge]]][0][0][-4]'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//re blue #offset[#mask[#offset[0][0][4][blue]][black][#~[sponge]]][0][0][4]'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//re blue #offset[#mask[#offset[-4][0][0][blue]][black][#~[sponge]]][-4][0][0]'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//re blue #offset[#mask[#offset[4][0][0][blue]][black][#~[sponge]]][4][0][0]'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "cyan <blue" gray'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "black >blue" cyan'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//re white #offset[#mask[#offset[-1][0][0][blue,gray]][spruce_door[facing=east,half=lower]][#~[sponge]]][-1][0][0]'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//re white #offset[#mask[#offset[1][0][0][blue,gray]][spruce_door[facing=west,half=lower]][#~[sponge]]][1][0][0]'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//re white #offset[#mask[#offset[0][0][-1][blue,gray]][spruce_door[facing=south,half=lower]][#~[sponge]]][0][0][-1]'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//re white #offset[#mask[#offset[0][0][1][blue,gray]][spruce_door[facing=north,half=lower]][#~[sponge]]][0][0][1]'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "spruce_door >spruce_door" ^spruce_door[half=upper]'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "air >stone_bricks <|black" moss_block'
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//re moss_block #offset[#mask[#offset[-1][0][0][air]][spruce_trapdoor[open=true,facing=west]][#~[sponge]]][-1][0][0]'
@@ -1026,9 +1050,6 @@
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace "white |brick_stairs" brick_slab[type=top]'
-	Send '{Enter}t'
-	Sleep 1500
-	SendText '//replace "black >stone_bricks,|light_gray" cyan'
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace "light_gray |orange" green'
@@ -1106,34 +1127,37 @@
 	SendText '//replace "white |green" blue'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace "white |blue" blue'
+	SendText '//replace "white |blue !>blue" blue'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace "white |blue" blue'
+	SendText '//replace "white |blue !>blue" blue'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace "white |blue" blue'
+	SendText '//replace "white |blue !>blue" blue'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace "white |blue" blue'
+	SendText '//replace "white |blue !>blue" blue'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace "white |blue" blue'
+	SendText '//replace "white |blue !>blue" blue'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace "white |blue" blue'
+	SendText '//replace "white |blue !>blue" blue'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace "white |blue" blue'
+	SendText '//replace "white |blue !>blue" blue'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace "white |blue" blue'
+	SendText '//replace "white |blue !>blue" blue'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace "white |blue" blue'
+	SendText '//replace "white |blue !>blue" blue'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace "white |blue" blue'
+	SendText '//replace "white |blue !>blue" blue'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "white |blue >blue" stone_brick_slab[type=double]'
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace calcite,pink,[white&[>calcite,brown_stained_glass_pane]] calcite,calcite,diorite,polished_diorite,white_concrete,white_concrete_powder'
@@ -1155,9 +1179,6 @@
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace red&[$desert] air'
-	Send '{Enter}t'
-	Sleep 1500
-	SendText '//expand 50 up'
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace "air |red" orange,yellow,orange,orange'
@@ -1355,7 +1376,7 @@
 	SendText '//replace "air >grass_block" #perlin[5][air,air,air,carrots]'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace carrots&[$cherry_grove] 20%air,20%short_grass,20%fern,10%tall_grass[half=lower],10%large_fern[half=lower],20%*pink_petals'
+	SendText '//replace carrots&[$cherry_grove] 20%short_grass,20%fern,10%tall_grass[half=lower],10%large_fern[half=lower],40%*pink_petals'
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace carrots&[$desert] 70%air,20%dead_bush,10%cactus'
@@ -1427,7 +1448,7 @@
 	SendText '//stack 1 down -m sponge -s'
 	Send '{Enter}t'
 	Sleep 1500
-	SendText '//replace light,obsidian,nether_wart_block,netherrack air'
+	SendText '//replace light,obsidian,nether_wart_block,netherrack,glass,blue air'
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//stack 1 up -m sponge -s'
@@ -1437,6 +1458,15 @@
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace "calcite,diorite,polished_diorite,white_concrete,white_concrete_powder >stone_bricks,mossy_stone_bricks,cracked_stone_bricks" light'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "light ~air" red'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "light ~red ~brick_slab" red'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace red bricks'
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace bricks brick_slab[type=double]'
@@ -1467,6 +1497,36 @@
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace "barrel >stone_bricks $cherry_grove" chiseled_nether_bricks'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "spruce_door $cherry_grove" ^cherry_door'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "air ||<<<##doors" stone_bricks'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "air >|mud_bricks >grass_block" 95%air,5%red'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "red |red" air'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "air >red" lantern'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace red stone_brick_wall'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace lava obsidian'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "wheat >|mud_bricks >farmland" 95%#existing,5%composter'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "light >stone_bricks <|brown_stained_glass_pane !|##doors" 60%#existing,5%cartography_table,5%fletching_table,5%anvil,5%stonecutter,5%crafting_table,5%cauldron,5%spruce_slab[type=top],5%*barrel'
+	Send '{Enter}t'
+	Sleep 1500
+	SendText '//replace "light >spruce_slab" brewing_stand'
 	Send '{Enter}t'
 	Sleep 1500
 	SendText '//replace grass_block&[$desert] sand'
